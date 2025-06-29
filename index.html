@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DailyDrawResult</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
         }
-        
+
         .app-header {
             background: linear-gradient(135deg, #FF6B6B 0%, #6A82FB 50%, #45EBA5 100%);
             background-size: 300% 300%;
             animation: gradientShift 6s ease infinite;
         }
-        
+
         @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
-        
+
         .card-expand {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform-origin: top;
         }
-        
+
         .card-expand.expanded {
             transform: scaleY(1);
             opacity: 1;
             max-height: 600px;
         }
-        
+
         .card-expand.collapsed {
             transform: scaleY(0);
             opacity: 0;
             max-height: 0;
             overflow: hidden;
         }
-        
+
         .lottery-card {
             border-radius: 20px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -55,7 +65,7 @@
             overflow: hidden;
             min-height: 44px;
         }
-        
+
         .lottery-card::before {
             content: '';
             position: absolute;
@@ -65,65 +75,72 @@
             height: 100%;
             border-radius: 20px 0 0 20px;
         }
-        
+
         .lottery-card:active {
             transform: scale(0.98);
         }
-        
+
         .lottery-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        
+
         .kerala-card {
             background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
         }
+
         .kerala-card::before {
             background: #FF4444;
         }
-        
+
         .maharashtra-card {
             background: linear-gradient(135deg, #6A82FB 0%, #8FA8FF 100%);
         }
+
         .maharashtra-card::before {
             background: #4263EB;
         }
-        
+
         .punjab-card {
             background: linear-gradient(135deg, #45EBA5 0%, #6BFFB8 100%);
         }
+
         .punjab-card::before {
             background: #20C997;
         }
-        
+
         .upcoming-card-1 {
             background: linear-gradient(135deg, #FFC93C 0%, #FFD666 100%);
         }
+
         .upcoming-card-1::before {
             background: #FFB020;
         }
-        
+
         .upcoming-card-2 {
             background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
         }
+
         .upcoming-card-2::before {
             background: #9333EA;
         }
-        
+
         .upcoming-card-3 {
             background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
         }
+
         .upcoming-card-3::before {
             background: #DB2777;
         }
-        
+
         .past-card {
             background: linear-gradient(135deg, #64748B 0%, #94A3B8 100%);
         }
+
         .past-card::before {
             background: #475569;
         }
-        
+
         .countdown-badge {
             background: linear-gradient(45deg, #667eea, #764ba2);
             border-radius: 8px;
@@ -134,7 +151,7 @@
             font-family: 'Courier New', monospace;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
         }
-        
+
         .prize-badge {
             background: linear-gradient(45deg, #ffd700, #ffed4a);
             color: #744210;
@@ -142,46 +159,58 @@
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
         }
-        
+
         .live-badge {
             background: linear-gradient(45deg, #10B981, #34D399);
             color: white;
             animation: pulse 2s infinite;
         }
-        
+
         .result-badge {
             background: linear-gradient(45deg, #3B82F6, #60A5FA);
             color: white;
         }
-        
+
         .upcoming-badge {
             background: linear-gradient(45deg, #F59E0B, #FBBF24);
             color: white;
             animation: glow 2s infinite alternate;
         }
-        
+
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
-        
+
         @keyframes glow {
-            0% { box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); }
-            100% { box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5); }
+            0% {
+                box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            }
         }
-        
+
         .past-badge {
             background: linear-gradient(45deg, #6B7280, #9CA3AF);
             color: white;
         }
-        
+
         .result-container {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .winning-number {
             background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
             color: #744210;
@@ -191,16 +220,16 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
         }
-        
+
         .prize-row {
             border-radius: 8px;
             transition: all 0.2s ease;
         }
-        
+
         .prize-row:hover {
             background: rgba(255, 255, 255, 0.8);
         }
-        
+
         .view-results-btn {
             background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
             transition: all 0.3s ease;
@@ -208,12 +237,12 @@
             font-weight: 600;
             min-height: 44px;
         }
-        
+
         .view-results-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
         }
-        
+
         .load-more-btn {
             background: linear-gradient(135deg, #10B981 0%, #059669 100%);
             transition: all 0.3s ease;
@@ -221,12 +250,12 @@
             font-weight: 600;
             min-height: 44px;
         }
-        
+
         .load-more-btn:hover {
             transform: translateY(-1px);
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
-        
+
         .section-title {
             background: linear-gradient(135deg, #374151 0%, #4B5563 100%);
             -webkit-background-clip: text;
@@ -234,28 +263,43 @@
             background-clip: text;
             font-weight: 800;
         }
-        
+
         .bounce-in {
             animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
-        
+
         @keyframes bounceIn {
-            0% { transform: scale(0.3) translateY(50px); opacity: 0; }
-            50% { transform: scale(1.05) translateY(-10px); opacity: 0.8; }
-            70% { transform: scale(0.95) translateY(0px); opacity: 0.9; }
-            100% { transform: scale(1) translateY(0px); opacity: 1; }
+            0% {
+                transform: scale(0.3) translateY(50px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05) translateY(-10px);
+                opacity: 0.8;
+            }
+
+            70% {
+                transform: scale(0.95) translateY(0px);
+                opacity: 0.9;
+            }
+
+            100% {
+                transform: scale(1) translateY(0px);
+                opacity: 1;
+            }
         }
-        
+
         .card-text {
             color: rgba(255, 255, 255, 0.95);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
-        
+
         .card-text-secondary {
             color: rgba(255, 255, 255, 0.8);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
-        
+
         .countdown-container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
@@ -286,9 +330,11 @@
                     <i class="fas fa-calendar-day text-blue-500 mr-3 text-2xl"></i>
                     Today's Results
                 </h2>
-                <span class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm px-3 py-1 rounded-full font-semibold">3 Results</span>
+                <span
+                    class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm px-3 py-1 rounded-full font-semibold">3
+                    Results</span>
             </div>
-            
+
             <div class="space-y-5">
                 <!-- Kerala State Lottery -->
                 <div class="lottery-card kerala-card p-5 cursor-pointer" onclick="toggleResult('result1')">
@@ -305,10 +351,11 @@
                             </div>
                         </div>
                         <div class="text-right">
-                            <i id="arrow1" class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
+                            <i id="arrow1"
+                                class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
                         </div>
                     </div>
-                    
+
                     <div id="result1" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
                             <div class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -361,10 +408,11 @@
                             </div>
                         </div>
                         <div class="text-right">
-                            <i id="arrow2" class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
+                            <i id="arrow2"
+                                class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
                         </div>
                     </div>
-                    
+
                     <div id="result2" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
                             <div class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -417,10 +465,11 @@
                             </div>
                         </div>
                         <div class="text-right">
-                            <i id="arrow3" class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
+                            <i id="arrow3"
+                                class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
                         </div>
                     </div>
-                    
+
                     <div id="result3" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
                             <div class="flex justify-between items-center py-3 border-b border-gray-200">
@@ -467,9 +516,11 @@
                     <i class="fas fa-clock text-orange-500 mr-3 text-2xl"></i>
                     Upcoming Lotteries
                 </h2>
-                <span class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm px-3 py-1 rounded-full font-semibold">5 Upcoming</span>
+                <span
+                    class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm px-3 py-1 rounded-full font-semibold">5
+                    Upcoming</span>
             </div>
-            
+
             <div class="space-y-5">
                 <!-- Upcoming Lottery 1 -->
                 <div class="lottery-card upcoming-card-1 p-5">
@@ -484,17 +535,20 @@
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹75 Lakh</span>
                             </div>
-                            
+
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
                                     <span class="text-xs card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown1-hours">23</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown1-hours">23</div>
                                         <span class="card-text text-xs">:</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown1-minutes">45</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown1-minutes">45</div>
                                         <span class="card-text text-xs">:</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown1-seconds">30</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown1-seconds">30</div>
                                     </div>
                                 </div>
                             </div>
@@ -515,17 +569,20 @@
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹2 Crore</span>
                             </div>
-                            
+
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
                                     <span class="text-xs card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown2-days">1</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown2-days">1</div>
                                         <span class="card-text text-xs">d</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown2-hours">23</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown2-hours">23</div>
                                         <span class="card-text text-xs">h</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown2-minutes">45</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown2-minutes">45</div>
                                         <span class="card-text text-xs">m</span>
                                     </div>
                                 </div>
@@ -547,17 +604,20 @@
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹60 Lakh</span>
                             </div>
-                            
+
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
                                     <span class="text-xs card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown3-days">2</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown3-days">2</div>
                                         <span class="card-text text-xs">d</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown3-hours">23</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown3-hours">23</div>
                                         <span class="card-text text-xs">h</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs" id="countdown3-minutes">45</div>
+                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
+                                            id="countdown3-minutes">45</div>
                                         <span class="card-text text-xs">m</span>
                                     </div>
                                 </div>
@@ -575,9 +635,11 @@
                     <i class="fas fa-history text-purple-500 mr-3 text-2xl"></i>
                     Past Results
                 </h2>
-                <button class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all">View All</button>
+                <button
+                    class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm px-4 py-2 rounded-full font-semibold hover:shadow-lg transition-all">View
+                    All</button>
             </div>
-            
+
             <div class="space-y-4">
                 <!-- Past Result 1 -->
                 <div class="lottery-card past-card p-5">
@@ -620,10 +682,19 @@
                 </div>
 
                 <!-- Load More Button -->
-                <button class="load-more-btn w-full text-white py-4 font-semibold flex items-center justify-center space-x-2">
+                <button
+                    class="load-more-btn w-full text-white py-4 font-semibold flex items-center justify-center space-x-2">
                     <i class="fas fa-plus"></i>
                     <span>Load More Results</span>
                 </button>
+
+                <!-- Add this in footer/bottom area -->
+<div class="text-center py-4 px-4">
+  <button id="disclaimerBtn" class="text-sm text-gray-500 hover:text-blue-500 transition-colors duration-300 underline">
+    View Disclaimer
+  </button>
+</div>
+
             </div>
         </section>
     </main>
@@ -633,11 +704,11 @@
         function toggleResult(resultId) {
             const result = document.getElementById(resultId);
             const arrow = document.getElementById('arrow' + resultId.slice(-1));
-            
+
             // Close all other results
             const allResults = document.querySelectorAll('.card-expand');
             const allArrows = document.querySelectorAll('[id^="arrow"]');
-            
+
             allResults.forEach((el, index) => {
                 if (el.id !== resultId) {
                     el.classList.remove('expanded');
@@ -645,7 +716,7 @@
                     allArrows[index].style.transform = 'rotate(0deg)';
                 }
             });
-            
+
             // Toggle current result
             if (result.classList.contains('collapsed')) {
                 result.classList.remove('collapsed');
@@ -662,18 +733,18 @@
         function updateCountdown(elementPrefix, targetDate) {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            
+
             if (distance > 0) {
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
+
                 const daysEl = document.getElementById(elementPrefix + '-days');
                 const hoursEl = document.getElementById(elementPrefix + '-hours');
                 const minutesEl = document.getElementById(elementPrefix + '-minutes');
                 const secondsEl = document.getElementById(elementPrefix + '-seconds');
-                
+
                 if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
                 if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
                 if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
@@ -707,7 +778,7 @@
         updateCountdown('countdown3', threeDaysLater.getTime());
 
         // Add bounce effect to cards when they appear
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const cards = document.querySelectorAll('.lottery-card');
             cards.forEach((card, index) => {
                 setTimeout(() => {
@@ -716,5 +787,100 @@
             });
         });
     </script>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full max-h-[80vh] overflow-y-auto shadow-2xl">
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-gradient-to-r from-red-500 to-pink-500 text-white p-4 rounded-t-2xl">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-bold">⚠️ DISCLAIMER</h3>
+                    <button id="closeModal" class="text-white hover:text-gray-200 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    We strictly recommend you to please visit and browse this site on your own risk. All the information
+                    available here is strictly for informational purposes and based on astrology and numerology
+                    calculations.
+                </p>
+                <p class="mb-4">
+                    We are no way associated or affiliated with any illegal Matka or gambling business. We abide by
+                    rules and regulations of the regions where you are accessing the website.
+                </p>
+                <p class="mb-4">
+                    May be it is illegal or banned in your region. If you are using our website despite ban, you will be
+                    solely responsible for the damage or loss occurred or legal action taken.
+                </p>
+                <p class="mb-4">
+                    Please leave our website immediately if you dont like our disclaimer.
+                </p>
+                <p class="font-semibold text-red-600">
+                    Copying any information / content posted on the website is strictly prohibited and against the law.
+                </p>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-gray-50 rounded-b-2xl">
+                <button id="closeModalBtn"
+                    class="w-full bg-gradient-to-r from-gray-500 to-gray-600 text-white py-3 rounded-xl font-medium hover:from-gray-600 hover:to-gray-700 transition-all duration-300">
+                    I Understand
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Disclaimer Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const disclaimerBtn = document.getElementById('disclaimerBtn');
+            const disclaimerModal = document.getElementById('disclaimerModal');
+            const closeModal = document.getElementById('closeModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            // Show modal
+            disclaimerBtn.addEventListener('click', function () {
+                disclaimerModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+            });
+
+            // Hide modal functions
+            function hideModal() {
+                disclaimerModal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scroll
+            }
+
+            // Close modal via X button
+            closeModal.addEventListener('click', hideModal);
+
+            // Close modal via "I Understand" button
+            closeModalBtn.addEventListener('click', hideModal);
+
+            // Close modal when clicking outside
+            disclaimerModal.addEventListener('click', function (e) {
+                if (e.target === disclaimerModal) {
+                    hideModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !disclaimerModal.classList.contains('hidden')) {
+                    hideModal();
+                }
+            });
+        });
+
+    </script>
 </body>
+
 </html>
