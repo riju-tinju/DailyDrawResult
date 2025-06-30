@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DailyDrawResult - Enhanced Results</title>
+    <title>DailyDrawResult - Updated</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
         .card-expand.expanded {
             transform: scaleY(1);
             opacity: 1;
-            max-height: 800px;
+            max-height: 600px;
         }
         
         .card-expand.collapsed {
@@ -192,18 +192,6 @@
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
         }
         
-        .winning-number-small {
-            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
-            color: #374151;
-            font-weight: 700;
-            letter-spacing: 2px;
-            border-radius: 8px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            font-size: 1.25rem;
-            padding: 8px 16px;
-        }
-        
         .prize-row {
             border-radius: 8px;
             transition: all 0.2s ease;
@@ -261,20 +249,6 @@
             padding: 8px;
             backdrop-filter: blur(5px);
         }
-        
-        .prize-section {
-            border-radius: 8px;
-            margin-bottom: 12px;
-        }
-        
-        .prize-section-small {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .prize-section-small:last-child {
-            border-bottom: none;
-        }
     </style>
 </head>
 
@@ -285,7 +259,7 @@
             <div class="flex items-center justify-center">
                 <div class="flex items-center space-x-3">
                     <i class="fas fa-dice text-3xl drop-shadow-lg"></i>
-                    <h1 class="text-2xl font-bold drop-shadow-lg tracking-wide">Bhutan State Lotteries</h1>
+                    <h1 class="text-2xl font-bold drop-shadow-lg tracking-wide">DailyDrawResult</h1>
                 </div>
             </div>
         </div>
@@ -311,7 +285,7 @@
                                 <span class="live-badge text-xs px-3 py-1 rounded-full font-bold">LIVE</span>
                                 <span class="card-text-secondary text-sm font-medium">30 June 2025 9.00AM</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Choice Lottery ( CL-17th Draw )</h3>
+                            <h3 class="font-bold text-lg card-text mb-2">Choice Lottery ( CL-17 )</h3>
                             <div class="flex items-center text-sm card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹1 Lack</span>
@@ -324,73 +298,32 @@
                     
                     <div id="result1" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
-                            <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                    <span class="flex items-center font-semibold text-gray-700">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-lg">₹100,000</span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">MH 40352</div>
-                                </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="flex items-center font-semibold text-gray-700">
+                                    <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
+                                    1st Prize
+                                </span>
+                                <span class="font-bold text-green-600 text-lg">₹100,000</span>
                             </div>
-                            
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
+                            <div class="text-center">
+                                <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">MH 40352</div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 text-sm">
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">2nd Prize: ST 34562</span>
                                     <span class="font-bold text-green-600">₹10,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">2712</div>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">3rd Prize: AB 78901</span>
+                                    <span class="font-bold text-green-600">₹5000</span>
                                 </div>
-                            </div>
-                            
-                            <!-- 3rd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹5,000</span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">4th Prize: KL 23456</span>
+                                    <span class="font-bold text-green-600">₹1000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">901</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 4th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹1,000</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">032</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 5th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">5th Prize: TN 67890</span>
                                     <span class="font-bold text-green-600">₹100</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">001</div>
                                 </div>
                             </div>
                         </div>
@@ -418,73 +351,32 @@
                     
                     <div id="result2" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
-                            <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                    <span class="flex items-center font-semibold text-gray-700">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-lg">₹50,00,000</span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">MH 789012</div>
-                                </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="flex items-center font-semibold text-gray-700">
+                                    <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
+                                    1st Prize
+                                </span>
+                                <span class="font-bold text-green-600 text-lg">₹50,00,000</span>
                             </div>
-                            
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
+                            <div class="text-center">
+                                <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">MH 789012</div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 text-sm">
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">2nd Prize: DL 456789</span>
                                     <span class="font-bold text-green-600">₹5,00,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">DL 456789</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 3rd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">3rd Prize: UP 123456</span>
                                     <span class="font-bold text-green-600">₹50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">UP 123456</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 4th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">4th Prize: RJ 789123</span>
                                     <span class="font-bold text-green-600">₹2,500</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">RJ 789123</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 5th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">5th Prize: GJ 456789</span>
                                     <span class="font-bold text-green-600">₹500</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">GJ 456789</div>
                                 </div>
                             </div>
                         </div>
@@ -512,73 +404,32 @@
                     
                     <div id="result3" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
-                            <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                    <span class="flex items-center font-semibold text-gray-700">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-lg">₹25,00,000</span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">PB 456789</div>
-                                </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="flex items-center font-semibold text-gray-700">
+                                    <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
+                                    1st Prize
+                                </span>
+                                <span class="font-bold text-green-600 text-lg">₹25,00,000</span>
                             </div>
-                            
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
+                            <div class="text-center">
+                                <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">PB 456789</div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 text-sm">
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">2nd Prize: HR 234567</span>
                                     <span class="font-bold text-green-600">₹2,50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">HR 234567</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 3rd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">3rd Prize: CH 890123</span>
                                     <span class="font-bold text-green-600">₹25,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">CH 890123</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 4th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">4th Prize: HP 567890</span>
                                     <span class="font-bold text-green-600">₹1,250</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">HP 567890</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 5th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">5th Prize: UK 345678</span>
                                     <span class="font-bold text-green-600">₹250</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">UK 345678</div>
                                 </div>
                             </div>
                         </div>
@@ -829,73 +680,32 @@
 
                     <div id="past1" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
-                            <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                    <span class="flex items-center font-semibold text-gray-700">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-lg">₹40,00,000</span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">GS 123456</div>
-                                </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="flex items-center font-semibold text-gray-700">
+                                    <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
+                                    1st Prize
+                                </span>
+                                <span class="font-bold text-green-600 text-lg">₹40,00,000</span>
                             </div>
-                            
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
+                            <div class="text-center">
+                                <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">GS 123456</div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 text-sm">
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">2nd Prize: OR 987654</span>
                                     <span class="font-bold text-green-600">₹4,00,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">OR 987654</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 3rd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">3rd Prize: KA 345678</span>
                                     <span class="font-bold text-green-600">₹40,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">KA 345678</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 4th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">4th Prize: AP 876543</span>
                                     <span class="font-bold text-green-600">₹2,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">AP 876543</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 5th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">5th Prize: TS 654321</span>
                                     <span class="font-bold text-green-600">₹400</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">TS 654321</div>
                                 </div>
                             </div>
                         </div>
@@ -923,73 +733,32 @@
 
                     <div id="past2" class="card-expand collapsed mt-5">
                         <div class="result-container p-5 space-y-4">
-                            <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
-                                    <span class="flex items-center font-semibold text-gray-700">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-lg">₹15,00,000</span>
-                                </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">AS 789012</div>
-                                </div>
+                            <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                <span class="flex items-center font-semibold text-gray-700">
+                                    <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
+                                    1st Prize
+                                </span>
+                                <span class="font-bold text-green-600 text-lg">₹15,00,000</span>
                             </div>
-                            
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
+                            <div class="text-center">
+                                <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">AS 789012</div>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2 text-sm">
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">2nd Prize: NE 246810</span>
                                     <span class="font-bold text-green-600">₹1,50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">NE 246810</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 3rd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">3rd Prize: ML 135790</span>
                                     <span class="font-bold text-green-600">₹15,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">ML 135790</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 4th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">4th Prize: SK 864209</span>
                                     <span class="font-bold text-green-600">₹750</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">SK 864209</div>
-                                </div>
-                            </div>
-                            
-                            <!-- 5th Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
+                                <div class="prize-row flex justify-between p-2">
+                                    <span class="font-medium text-gray-600">5th Prize: TR 753951</span>
                                     <span class="font-bold text-green-600">₹150</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">TR 753951</div>
                                 </div>
                             </div>
                         </div>
