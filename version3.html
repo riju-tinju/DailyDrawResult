@@ -143,13 +143,17 @@
 
         .countdown-badge {
             background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 8px;
+            border-radius: 10px;
             color: white;
-            font-weight: 600;
-            min-width: 32px;
-            min-height: 32px;
+            font-weight: 700;
+            min-width: 40px;
+            min-height: 40px;
             font-family: 'Courier New', monospace;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .prize-badge {
@@ -222,15 +226,11 @@
         }
 
         .winning-number-small {
-            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
             color: #374151;
             font-weight: 700;
-            letter-spacing: 2px;
-            border-radius: 8px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            font-size: 1.25rem;
-            padding: 8px 16px;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            padding: 2px 0;
         }
 
         .prize-row {
@@ -302,7 +302,7 @@
         .countdown-container {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            padding: 8px;
+            padding: 12px;
             backdrop-filter: blur(5px);
         }
 
@@ -329,7 +329,7 @@
             <div class="flex items-center justify-center">
                 <div class="flex items-center space-x-3">
                     <i class="fas fa-dice text-3xl drop-shadow-lg"></i>
-                    <h1 class="text-2xl font-bold drop-shadow-lg tracking-wide">Bhutan State Lotteries</h1>
+                    <h1 class="text-2xl font-bold drop-shadow-lg tracking-wide">DailyDrawResult</h1>
                 </div>
             </div>
         </div>
@@ -354,13 +354,27 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="live-badge text-xs px-3 py-1 rounded-full font-bold">LIVE</span>
-                                <span class="card-text-secondary text-sm font-medium">30 June 2025 9.00AM</span>
+                                <span class="live-badge text-sm px-3 py-1 rounded-full font-bold">LIVE</span>
+                                <span class="card-text-secondary text-base font-medium">30 June 2025 9.00AM</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Choice Lottery ( CL-17th Draw )</h3>
-                            <div class="flex items-center text-sm card-text-secondary">
+                            <h3 class="font-bold text-xl card-text mb-2">Choice Lottery ( CL-17 )</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
-                                <span class="font-semibold">1st Prize: ₹1 Lack</span>
+                                <span class="font-semibold">1st Prize: ₹1 Lakh</span>
+                            </div>
+
+                            <!-- Countdown Timer -->
+                            <div class="countdown-container">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm card-text-secondary font-medium">Result in:</span>
+                                    <div class="flex space-x-2">
+                                        <div class="countdown-badge" id="result-countdown1-hours">02</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown1-minutes">30</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown1-seconds">45</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-right">
@@ -378,27 +392,31 @@
                                         <i class="fas fa-medal text-yellow-500 mr-2 text-lg"></i>
                                         1st Prize
                                     </span>
+                                    <div class="text-center mt-1">
+                                        <div class="winning-number-small font-mono">AB 78901</div>
+                                </div>
                                     <span class="font-bold text-green-600 text-lg">₹100,000</span>
                                 </div>
-                                <div class="text-center">
-                                    <div class="winning-number text-2xl font-mono py-4 px-6 inline-block">MH 40352</div>
-                                </div>
+                                
                             </div>
 
-                            <!-- 2nd Prize -->
-                            <div class="prize-section-small">
-                                <div class="flex justify-between items-center py-2">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹10,000</span>
-                                </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">2712</div>
-                                </div>
-                            </div>
+                            
 
+                            <div class="flex justify-between items-center py-2">
+    <!-- Left: Medal + Prize Name -->
+    <span class="flex items-center font-medium text-gray-600">
+        <i class="fas fa-medal text-amber-600 mr-2"></i>
+        3rd Prize
+    </span>
+    
+    <!-- Center: Winning Number -->
+    <div class="text-center">
+        <div class="font-mono">78901</div>
+    </div>
+    
+    <!-- Right: Prize Amount -->
+    <span class="font-bold text-green-600">₹5,000</span>
+</div>
                             <!-- 3rd Prize -->
                             <div class="prize-section-small">
                                 <div class="flex justify-between items-center py-2">
@@ -406,40 +424,51 @@
                                         <i class="fas fa-medal text-amber-600 mr-2"></i>
                                         3rd Prize
                                     </span>
+                                    <!--  -->
+                                    <div class="text-center mt-1">
+                                        <div class="winning-number-small font-mono">AB 78901</div>
+                                    </div>
+                                    <!--  -->
                                     <span class="font-bold text-green-600">₹5,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">901</div>
-                                </div>
+                                
                             </div>
-
-                            <!-- 4th Prize -->
+<!-- 3rd Prize -->
                             <div class="prize-section-small">
                                 <div class="flex justify-between items-center py-2">
                                     <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
+                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
+                                        3rd Prize
                                     </span>
-                                    <span class="font-bold text-green-600">₹1,000</span>
+                                    <!--  -->
+                                    <div class="text-center mt-1">
+                                        <div class="winning-number-small font-mono">AB 78901</div>
+                                    </div>
+                                    <!--  -->
+                                    <span class="font-bold text-green-600">₹5,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">032</div>
-                                </div>
+                                
                             </div>
-
-                            <!-- 5th Prize -->
+<!-- 3rd Prize -->
                             <div class="prize-section-small">
                                 <div class="flex justify-between items-center py-2">
                                     <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
+                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
+                                        3rd Prize
                                     </span>
-                                    <span class="font-bold text-green-600">₹100</span>
+                                    <!--  -->
+                                    <div class="text-center mt-1">
+                                        <div class="winning-number-small font-mono">AB 78901</div>
+                                    </div>
+                                    <!--  -->
+                                    <span class="font-bold text-green-600">₹5,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">001</div>
-                                </div>
+                                
                             </div>
+
+
+
+                          
                         </div>
                     </div>
                 </div>
@@ -449,13 +478,27 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="result-badge text-xs px-3 py-1 rounded-full font-bold">RESULT</span>
-                                <span class="card-text-secondary text-sm font-medium">28 June 2025</span>
+                                <span class="result-badge text-sm px-3 py-1 rounded-full font-bold">RESULT</span>
+                                <span class="card-text-secondary text-base font-medium">28 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Maharashtra Weekly</h3>
-                            <div class="flex items-center text-sm card-text-secondary">
+                            <h3 class="font-bold text-xl card-text mb-2">Maharashtra Weekly</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹50 Lakh</span>
+                            </div>
+
+                            <!-- Countdown Timer -->
+                            <div class="countdown-container">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm card-text-secondary font-medium">Next draw:</span>
+                                    <div class="flex space-x-2">
+                                        <div class="countdown-badge" id="result-countdown2-hours">07</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown2-minutes">00</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown2-seconds">00</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-right">
@@ -490,8 +533,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹5,00,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">DL 456789</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">DL 456789</div>
                                 </div>
                             </div>
 
@@ -504,8 +547,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">UP 123456</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">UP 123456</div>
                                 </div>
                             </div>
 
@@ -518,8 +561,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹2,500</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">RJ 789123</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">RJ 789123</div>
                                 </div>
                             </div>
 
@@ -532,8 +575,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹500</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">GJ 456789</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">GJ 456789</div>
                                 </div>
                             </div>
                         </div>
@@ -545,13 +588,27 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="result-badge text-xs px-3 py-1 rounded-full font-bold">RESULT</span>
-                                <span class="card-text-secondary text-sm font-medium">28 June 2025</span>
+                                <span class="result-badge text-sm px-3 py-1 rounded-full font-bold">RESULT</span>
+                                <span class="card-text-secondary text-base font-medium">28 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Punjab Dear Daily</h3>
-                            <div class="flex items-center text-sm card-text-secondary">
+                            <h3 class="font-bold text-xl card-text mb-2">Punjab Dear Daily</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹25 Lakh</span>
+                            </div>
+
+                            <!-- Countdown Timer -->
+                            <div class="countdown-container">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm card-text-secondary font-medium">Next draw:</span>
+                                    <div class="flex space-x-2">
+                                        <div class="countdown-badge" id="result-countdown3-hours">24</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown3-minutes">00</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="result-countdown3-seconds">00</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="text-right">
@@ -586,8 +643,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹2,50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">HR 234567</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">HR 234567</div>
                                 </div>
                             </div>
 
@@ -600,9 +657,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹25,000</span>
                                 </div>
-                                <!-- SHOULD BECOME (no background, minimal space) -->
                                 <div class="text-center mt-1">
-                                    <div class="font-mono text-gray-700">CH 890123</div>
+                                    <div class="winning-number-small font-mono">CH 890123</div>
                                 </div>
                             </div>
 
@@ -615,8 +671,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹1,250</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">HP 567890</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">HP 567890</div>
                                 </div>
                             </div>
 
@@ -629,8 +685,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹250</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">UK 345678</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">UK 345678</div>
                                 </div>
                             </div>
                         </div>
@@ -657,11 +713,11 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="upcoming-badge text-xs px-3 py-1 rounded-full font-bold">NEXT</span>
-                                <span class="card-text-secondary text-sm font-medium">29 June 2025</span>
+                                <span class="upcoming-badge text-sm px-3 py-1 rounded-full font-bold">NEXT</span>
+                                <span class="card-text-secondary text-base font-medium">29 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">West Bengal Weekly</h3>
-                            <div class="flex items-center text-sm card-text-secondary mb-4">
+                            <h3 class="font-bold text-xl card-text mb-2">West Bengal Weekly</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹75 Lakh</span>
                             </div>
@@ -669,16 +725,13 @@
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-xs card-text-secondary font-medium">Draws in:</span>
+                                    <span class="text-sm card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown1-hours">23</div>
-                                        <span class="card-text text-xs">:</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown1-minutes">45</div>
-                                        <span class="card-text text-xs">:</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown1-seconds">30</div>
+                                        <div class="countdown-badge" id="countdown1-hours">23</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="countdown1-minutes">45</div>
+                                        <span class="card-text text-sm">:</span>
+                                        <div class="countdown-badge" id="countdown1-seconds">30</div>
                                     </div>
                                 </div>
                             </div>
@@ -726,11 +779,11 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="upcoming-badge text-xs px-3 py-1 rounded-full font-bold">UPCOMING</span>
-                                <span class="card-text-secondary text-sm font-medium">30 June 2025</span>
+                                <span class="upcoming-badge text-sm px-3 py-1 rounded-full font-bold">UPCOMING</span>
+                                <span class="card-text-secondary text-base font-medium">30 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Rajasthan Bumper</h3>
-                            <div class="flex items-center text-sm card-text-secondary mb-4">
+                            <h3 class="font-bold text-xl card-text mb-2">Rajasthan Bumper</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹2 Crore</span>
                             </div>
@@ -738,17 +791,14 @@
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-xs card-text-secondary font-medium">Draws in:</span>
+                                    <span class="text-sm card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown2-days">1</div>
-                                        <span class="card-text text-xs">d</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown2-hours">23</div>
-                                        <span class="card-text text-xs">h</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown2-minutes">45</div>
-                                        <span class="card-text text-xs">m</span>
+                                        <div class="countdown-badge" id="countdown2-days">1</div>
+                                        <span class="card-text text-sm">d</span>
+                                        <div class="countdown-badge" id="countdown2-hours">23</div>
+                                        <span class="card-text text-sm">h</span>
+                                        <div class="countdown-badge" id="countdown2-minutes">45</div>
+                                        <span class="card-text text-sm">m</span>
                                     </div>
                                 </div>
                             </div>
@@ -796,11 +846,11 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="upcoming-badge text-xs px-3 py-1 rounded-full font-bold">UPCOMING</span>
-                                <span class="card-text-secondary text-sm font-medium">01 July 2025</span>
+                                <span class="upcoming-badge text-sm px-3 py-1 rounded-full font-bold">UPCOMING</span>
+                                <span class="card-text-secondary text-base font-medium">01 July 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Tamil Nadu Special</h3>
-                            <div class="flex items-center text-sm card-text-secondary mb-4">
+                            <h3 class="font-bold text-xl card-text mb-2">Tamil Nadu Special</h3>
+                            <div class="flex items-center text-base card-text-secondary mb-4">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">1st Prize: ₹60 Lakh</span>
                             </div>
@@ -808,17 +858,14 @@
                             <!-- Countdown Timer -->
                             <div class="countdown-container">
                                 <div class="flex items-center justify-between">
-                                    <span class="text-xs card-text-secondary font-medium">Draws in:</span>
+                                    <span class="text-sm card-text-secondary font-medium">Draws in:</span>
                                     <div class="flex space-x-2">
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown3-days">2</div>
-                                        <span class="card-text text-xs">d</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown3-hours">23</div>
-                                        <span class="card-text text-xs">h</span>
-                                        <div class="countdown-badge flex items-center justify-center px-2 py-1 text-xs"
-                                            id="countdown3-minutes">45</div>
-                                        <span class="card-text text-xs">m</span>
+                                        <div class="countdown-badge" id="countdown3-days">2</div>
+                                        <span class="card-text text-sm">d</span>
+                                        <div class="countdown-badge" id="countdown3-hours">23</div>
+                                        <span class="card-text text-sm">h</span>
+                                        <div class="countdown-badge" id="countdown3-minutes">45</div>
+                                        <span class="card-text text-sm">m</span>
                                     </div>
                                 </div>
                             </div>
@@ -881,11 +928,11 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="past-badge text-xs px-3 py-1 rounded-full font-bold">PAST</span>
-                                <span class="card-text-secondary text-sm font-medium">27 June 2025</span>
+                                <span class="past-badge text-sm px-3 py-1 rounded-full font-bold">PAST</span>
+                                <span class="card-text-secondary text-base font-medium">27 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Goa State Weekly</h3>
-                            <div class="flex items-center text-sm card-text-secondary">
+                            <h3 class="font-bold text-xl card-text mb-2">Goa State Weekly</h3>
+                            <div class="flex items-center text-base card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">Winner: GS 123456 - ₹40 Lakh</span>
                             </div>
@@ -922,8 +969,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹4,00,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">OR 987654</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">OR 987654</div>
                                 </div>
                             </div>
 
@@ -936,8 +983,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹40,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">KA 345678</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">KA 345678</div>
                                 </div>
                             </div>
 
@@ -950,8 +997,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹2,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">AP 876543</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">AP 876543</div>
                                 </div>
                             </div>
 
@@ -964,8 +1011,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹400</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">TS 654321</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">TS 654321</div>
                                 </div>
                             </div>
                         </div>
@@ -977,11 +1024,11 @@
                     <div class="flex items-center justify-between">
                         <div class="flex-1">
                             <div class="flex items-center space-x-3 mb-3">
-                                <span class="past-badge text-xs px-3 py-1 rounded-full font-bold">PAST</span>
-                                <span class="card-text-secondary text-sm font-medium">26 June 2025</span>
+                                <span class="past-badge text-sm px-3 py-1 rounded-full font-bold">PAST</span>
+                                <span class="card-text-secondary text-base font-medium">26 June 2025</span>
                             </div>
-                            <h3 class="font-bold text-lg card-text mb-2">Assam Daily</h3>
-                            <div class="flex items-center text-sm card-text-secondary">
+                            <h3 class="font-bold text-xl card-text mb-2">Assam Daily</h3>
+                            <div class="flex items-center text-base card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="font-semibold">Winner: AS 789012 - ₹15 Lakh</span>
                             </div>
@@ -1018,8 +1065,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹1,50,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">NE 246810</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">NE 246810</div>
                                 </div>
                             </div>
 
@@ -1032,8 +1079,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹15,000</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">ML 135790</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">ML 135790</div>
                                 </div>
                             </div>
 
@@ -1046,8 +1093,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹750</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">SK 864209</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">SK 864209</div>
                                 </div>
                             </div>
 
@@ -1060,8 +1107,8 @@
                                     </span>
                                     <span class="font-bold text-green-600">₹150</span>
                                 </div>
-                                <div class="text-center mt-2">
-                                    <div class="winning-number-small font-mono inline-block">TR 753951</div>
+                                <div class="text-center mt-1">
+                                    <div class="winning-number-small font-mono">TR 753951</div>
                                 </div>
                             </div>
                         </div>
@@ -1218,17 +1265,37 @@
         threeDaysLater.setDate(threeDaysLater.getDate() + 3);
         threeDaysLater.setHours(14, 0, 0, 0);
 
+        // Today's results countdown targets
+        const resultTime1 = new Date();
+        resultTime1.setHours(resultTime1.getHours() + 2, 30, 45, 0);
+
+        const resultTime2 = new Date();
+        resultTime2.setHours(resultTime2.getHours() + 7, 0, 0, 0);
+
+        const resultTime3 = new Date();
+        resultTime3.setDate(resultTime3.getDate() + 1);
+        resultTime3.setHours(0, 0, 0, 0);
+
         // Update countdowns every second
         setInterval(() => {
+            // Upcoming lotteries
             updateCountdown('countdown1', tomorrow.getTime());
             updateCountdown('countdown2', dayAfter.getTime());
             updateCountdown('countdown3', threeDaysLater.getTime());
+
+            // Today's results
+            updateCountdown('result-countdown1', resultTime1.getTime());
+            updateCountdown('result-countdown2', resultTime2.getTime());
+            updateCountdown('result-countdown3', resultTime3.getTime());
         }, 1000);
 
         // Initial countdown update
         updateCountdown('countdown1', tomorrow.getTime());
         updateCountdown('countdown2', dayAfter.getTime());
         updateCountdown('countdown3', threeDaysLater.getTime());
+        updateCountdown('result-countdown1', resultTime1.getTime());
+        updateCountdown('result-countdown2', resultTime2.getTime());
+        updateCountdown('result-countdown3', resultTime3.getTime());
 
         // Add bounce effect to cards when they appear
         window.addEventListener('load', function () {
