@@ -166,13 +166,29 @@
             background: #4F46E5;
         }
 
-        .past-card {
+        /* .past-card {
             background: linear-gradient(135deg, #64748B 0%, #94A3B8 100%);
         }
 
         .past-card::before {
             background: #475569;
+        } */
+
+        .past-card1 {
+            background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
         }
+
+        .past-card1::before {
+            background: #D97706;
+        } 
+
+         .past-card2 {
+             background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        }
+
+        .past-card2::before {
+             background: #059669;
+        } 
 
         .countdown-badge {
             background: linear-gradient(45deg, #667eea, #764ba2);
@@ -1164,7 +1180,7 @@
 
             <div class="space-y-5">
                 <!-- Past Result 1 -->
-                <div class="lottery-card past-card cursor-pointer" onclick="toggleResult('past1')">
+                <div class="lottery-card past-card1 cursor-pointer" onclick="toggleResult('past1')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
                             <div class="flex items-center space-x-3">
@@ -1239,7 +1255,7 @@
                 </div>
 
                 <!-- Past Result 2 -->
-                <div class="lottery-card past-card cursor-pointer" onclick="toggleResult('past2')">
+                <div class="lottery-card past-card2 cursor-pointer" onclick="toggleResult('past2')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
                             <div class="flex items-center space-x-3">
