@@ -324,24 +324,6 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        .prize-section {
-            border-radius: 8px;
-            margin-bottom: 20px;
-            padding: 16px 0;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .prize-section-horizontal {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            margin-bottom: 10px;
-        }
-
-        .prize-section-horizontal:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
         /* Enhanced Font Sizes */
         .card-lottery-name {
             font-size: 1.5rem;
@@ -358,7 +340,6 @@
         .card-prize {
             font-size: 1.125rem;
             font-weight: 700;
-            /* margin-bottom: 16px; */
         }
 
         /* Enhanced Card Spacing */
@@ -368,6 +349,52 @@
 
         .card-element-spacing>*:last-child {
             margin-bottom: 0;
+        }
+
+        /* New Result Card Design */
+        .result-card {
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-card-header {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            color: white;
+            padding: 8px 20px;
+            font-weight: 700;
+            font-size: .96rem;
+            text-align: center;
+        }
+
+        .result-card-content {
+            background: white;
+            padding: 16px 20px;
+            text-align: center;
+        }
+
+        .result-prize-amount {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #059669;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .result-winning-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #374151;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 2px;
+            /* margin-bottom: 12px; */
+        }
+
+        .result-location {
+            font-size: 0.9rem;
+            color: #6B7280;
+            font-weight: 500;
         }
 
         /* Mobile Responsive Design */
@@ -390,39 +417,6 @@
                 padding: 14px;
             }
 
-            /* Two-row layout for mobile */
-            .prize-section-mobile {
-                padding: 14px 0;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-                margin-bottom: 12px;
-            }
-
-            .prize-section-mobile:last-child {
-                border-bottom: none;
-                margin-bottom: 0;
-            }
-
-            .prize-header-mobile {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-
-            .prize-number-mobile {
-                text-align: center;
-                margin-top: 10px;
-            }
-
-            .prize-section {
-                margin-bottom: 16px;
-                padding: 14px 0;
-            }
-
-            .prize-section .prize-header-mobile {
-                margin-bottom: 12px;
-            }
-
             .card-lottery-name {
                 font-size: 1.375rem;
             }
@@ -434,9 +428,55 @@
             .card-prize {
                 font-size: 1.075rem;
             }
+
+            .result-prize-amount {
+                font-size: 1.4rem;
+            }
+
+            .result-winning-number {
+                font-size: 1.3rem;
+            }
         }
 
-        
+        /* @media (max-width: 480px) {
+            .lottery-card {
+                padding: 20px !important;
+            }
+            
+            .result-container {
+                padding: 18px !important;
+            }
+            
+            .countdown-badge {
+                min-width: 42px;
+                min-height: 42px;
+                font-size: 0.95rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .card-lottery-name {
+                font-size: 1.25rem;
+            }
+            
+            .card-date {
+                font-size: 0.9rem;
+            }
+            
+            .card-prize {
+                font-size: 1rem;
+            }
+
+            .result-prize-amount {
+                font-size: 1.5rem;
+            }
+
+            .result-winning-number {
+                font-size: 1.2rem;
+            }
+        } */
     </style>
 </head>
 
@@ -446,11 +486,8 @@
         <div class="px-6 py-5">
             <div class="flex items-center justify-center">
                 <div class="flex items-center space-x-3">
-                    <!-- <i class="fas fa-dice text-2xl drop-shadow-lg"></i> -->
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfvxp4SnnjaYyFQDP8d5D660XMvy4nQfc08ScgqFq3IjufpC1OH-ykrQ6v-SkPsuVCt7w&usqp=CAU"
-                        style="height: 34px;
-    width: 34px;
-    border-radius: 50%;" alt="">
+                        style="height: 34px; width: 34px; border-radius: 50%;" alt="">
                     <h1 class="text-xl font-bold drop-shadow-lg tracking-wide">Bhutan State Lotteries</h1>
                 </div>
             </div>
@@ -471,7 +508,7 @@
             </div>
 
             <div class="space-y-6">
-                <!-- Kerala State Lottery -->
+                <!-- Choice Weekly Lottery 1 -->
                 <div class="lottery-card kerala-card cursor-pointer" onclick="toggleResult('result1')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -479,7 +516,7 @@
                                 <span class="live-badge rounded-full">LIVE</span>
                                 <span class="card-text-secondary card-date">30 June 2025 9.00AM</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Tuesday Choice Weekly Lottery <br>( CL-17 th Draw)</h3>
+                            <h3 class="card-text card-lottery-name">Tuesday Choice Weekly Lottery (CL 18th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">1st Prize: ₹1 Lakh</span>
@@ -508,79 +545,59 @@
                     <div id="result1" class="card-expand collapsed mt-6">
                         <div class="result-container space-y-4">
                             <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-bold text-gray-700 text-lg">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-xl"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-xl">₹100,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number font-mono">MH 40352</div>
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,00,000/-</div>
+                                    <div class="result-winning-number">MH 40352</div>
+
                                 </div>
                             </div>
 
                             <!-- 2nd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹10,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">2712</div>
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">2712</div>
+
                                 </div>
                             </div>
 
                             <!-- 3rd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹5,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">901</div>
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹5,000/-</div>
+                                    <div class="result-winning-number">901</div>
+
                                 </div>
                             </div>
 
                             <!-- 4th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹1,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">032</div>
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,000/-</div>
+                                    <div class="result-winning-number">032</div>
+
                                 </div>
                             </div>
 
                             <!-- 5th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹100</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">001</div>
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹100/-</div>
+                                    <div class="result-winning-number">001</div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Maharashtra State Lottery -->
+                <!-- Choice Weekly Lottery 2 -->
                 <div class="lottery-card maharashtra-card cursor-pointer" onclick="toggleResult('result2')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -588,7 +605,8 @@
                                 <span class="result-badge rounded-full">RESULT</span>
                                 <span class="card-text-secondary card-date">28 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Maharashtra Weekly</h3>
+                            <h3 class="card-text card-lottery-name">Wednesday Choice Weekly Lottery<br>(CL 18th Draw)
+                            </h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">1st Prize: ₹50 Lakh</span>
@@ -617,79 +635,59 @@
                     <div id="result2" class="card-expand collapsed mt-6">
                         <div class="result-container space-y-4">
                             <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-bold text-gray-700 text-lg">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-xl"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-xl">₹50,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number font-mono">MH 789012</div>
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,00,000/-</div>
+                                    <div class="result-winning-number">MH 40352</div>
+
                                 </div>
                             </div>
 
                             <!-- 2nd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹5,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">DL 456789</div>
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">2712</div>
+
                                 </div>
                             </div>
 
                             <!-- 3rd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹50,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">UP 123456</div>
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹5,000/-</div>
+                                    <div class="result-winning-number">901</div>
+
                                 </div>
                             </div>
 
                             <!-- 4th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹2,500</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">RJ 789123</div>
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,000/-</div>
+                                    <div class="result-winning-number">032</div>
+
                                 </div>
                             </div>
 
                             <!-- 5th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹500</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">GJ 456789</div>
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹100/-</div>
+                                    <div class="result-winning-number">001</div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Punjab State Lottery -->
+                <!-- Choice Weekly Lottery 3 -->
                 <div class="lottery-card punjab-card cursor-pointer" onclick="toggleResult('result3')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -697,7 +695,7 @@
                                 <span class="result-badge rounded-full">RESULT</span>
                                 <span class="card-text-secondary card-date">28 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Punjab Dear Daily</h3>
+                            <h3 class="card-text card-lottery-name">Choice Weekly Lottery<br>(CL 18th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">1st Prize: ₹25 Lakh</span>
@@ -726,72 +724,52 @@
                     <div id="result3" class="card-expand collapsed mt-6">
                         <div class="result-container space-y-4">
                             <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-bold text-gray-700 text-lg">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-xl"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-xl">₹25,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number font-mono">PB 456789</div>
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,00,000/-</div>
+                                    <div class="result-winning-number">MH 40352</div>
+
                                 </div>
                             </div>
 
                             <!-- 2nd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹2,50,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">HR 234567</div>
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">2712</div>
+
                                 </div>
                             </div>
 
                             <!-- 3rd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹25,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">CH 890123</div>
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹5,000/-</div>
+                                    <div class="result-winning-number">901</div>
+
                                 </div>
                             </div>
 
                             <!-- 4th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹1,250</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">HP 567890</div>
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,000/-</div>
+                                    <div class="result-winning-number">032</div>
+
                                 </div>
                             </div>
 
                             <!-- 5th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹250</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">UK 345678</div>
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹100/-</div>
+                                    <div class="result-winning-number">001</div>
+
                                 </div>
                             </div>
                         </div>
@@ -808,7 +786,7 @@
                     Upcoming Lotteries
                 </h2>
                 <span
-                    class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm px-3 py-1 rounded-full font-semibold">5
+                    class="bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm px-3 py-1 rounded-full font-semibold">3
                     Upcoming</span>
             </div>
 
@@ -821,7 +799,7 @@
                                 <span class="upcoming-badge rounded-full">NEXT</span>
                                 <span class="card-text-secondary card-date">29 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Wednesday Choice Weekly Lottery <br>( CL 17 th Draw )</h3>
+                            <h3 class="card-text card-lottery-name">Wednesday Choice Weekly Lottery (CL 19th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">1st Prize: ₹75 Lakh</span>
@@ -848,31 +826,54 @@
                     </div>
 
                     <div id="upcoming1" class="card-expand collapsed mt-6">
-                        <div class="result-container space-y-3">
-                            <div class="text-center mb-4">
-                                <h4 class="font-bold text-lg text-gray-700 mb-2">Prize Structure</h4>
-                                <p class="text-sm text-gray-600">Draw starts in few hours!</p>
+                        <div class="result-container space-y-4">
+                            <!-- 1st Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹75,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ </div>
+
+                                </div>
                             </div>
-                            <div class="grid grid-cols-1 gap-3 text-sm">
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">1st Prize:</span>
-                                    <span class="font-bold text-green-600">₹75,00,000</span>
+
+                            <!-- 2nd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹7,50,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ </div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">2nd Prize:</span>
-                                    <span class="font-bold text-green-600">₹7,50,000</span>
+                            </div>
+
+                            <!-- 3rd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹75,000/-</div>
+                                    <div class="result-winning-number">_ _ _ </div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">3rd Prize:</span>
-                                    <span class="font-bold text-green-600">₹75,000</span>
+                            </div>
+
+                            <!-- 4th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹3,750/-</div>
+                                    <div class="result-winning-number">_ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">4th Prize:</span>
-                                    <span class="font-bold text-green-600">₹3,750</span>
-                                </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">5th Prize:</span>
-                                    <span class="font-bold text-green-600">₹750</span>
+                            </div>
+
+                            <!-- 5th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹750/-</div>
+                                    <div class="result-winning-number">_ _ _</div>
+
                                 </div>
                             </div>
                         </div>
@@ -887,10 +888,10 @@
                                 <span class="upcoming-badge rounded-full">UPCOMING</span>
                                 <span class="card-text-secondary card-date">30 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Thursday Choice Weekly Lottery <br>( CL 17 th Draw )</h3>
+                            <h3 class="card-text card-lottery-name">Thursday Choice Weekly Lottery (CL 19th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
-                                <span class="card-prize">1st Prize: ₹2 Crore</span> 
+                                <span class="card-prize">1st Prize: ₹2 Crore</span>
                             </div>
 
                             <!-- Countdown Timer -->
@@ -915,31 +916,54 @@
                     </div>
 
                     <div id="upcoming2" class="card-expand collapsed mt-6">
-                        <div class="result-container space-y-3">
-                            <div class="text-center mb-4">
-                                <h4 class="font-bold text-lg text-gray-700 mb-2">Prize Structure</h4>
-                                <p class="text-sm text-gray-600">Mega Bumper Draw!</p>
+                        <div class="result-container space-y-4">
+                            <!-- 1st Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹2,00,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
+                                </div>
                             </div>
-                            <div class="grid grid-cols-1 gap-3 text-sm">
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">1st Prize:</span>
-                                    <span class="font-bold text-green-600">₹2,00,00,000</span>
+
+                            <!-- 2nd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹20,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">2nd Prize:</span>
-                                    <span class="font-bold text-green-600">₹20,00,000</span>
+                            </div>
+
+                            <!-- 3rd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹2,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">3rd Prize:</span>
-                                    <span class="font-bold text-green-600">₹2,00,000</span>
+                            </div>
+
+                            <!-- 4th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">4th Prize:</span>
-                                    <span class="font-bold text-green-600">₹10,000</span>
-                                </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">5th Prize:</span>
-                                    <span class="font-bold text-green-600">₹2,000</span>
+                            </div>
+
+                            <!-- 5th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹2,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
                             </div>
                         </div>
@@ -954,7 +978,7 @@
                                 <span class="upcoming-badge rounded-full">UPCOMING</span>
                                 <span class="card-text-secondary card-date">01 July 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Friday Choice Weekly Lottery <br>( CL 17 th Draw )</h3>
+                            <h3 class="card-text card-lottery-name">Friday Choice Weekly Lottery (CL 19th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">1st Prize: ₹60 Lakh</span>
@@ -982,49 +1006,72 @@
                     </div>
 
                     <div id="upcoming3" class="card-expand collapsed mt-6">
-                        <div class="result-container space-y-3">
-                            <div class="text-center mb-4">
-                                <h4 class="font-bold text-lg text-gray-700 mb-2">Prize Structure</h4>
-                                <p class="text-sm text-gray-600">Special Weekly Draw</p>
+                        <div class="result-container space-y-4">
+                            <!-- 1st Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹60,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
+                                </div>
                             </div>
-                            <div class="grid grid-cols-1 gap-3 text-sm">
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">1st Prize:</span>
-                                    <span class="font-bold text-green-600">₹60,00,000</span>
+
+                            <!-- 2nd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹6,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">2nd Prize:</span>
-                                    <span class="font-bold text-green-600">₹6,00,000</span>
+                            </div>
+
+                            <!-- 3rd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹60,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">3rd Prize:</span>
-                                    <span class="font-bold text-green-600">₹60,000</span>
+                            </div>
+
+                            <!-- 4th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹3,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">4th Prize:</span>
-                                    <span class="font-bold text-green-600">₹3,000</span>
-                                </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">5th Prize:</span>
-                                    <span class="font-bold text-green-600">₹600</span>
+                            </div>
+
+                            <!-- 5th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹600/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Upcoming Lottery 4 -->
-                <div class="lottery-card upcoming-card-1 cursor-pointer" onclick="toggleResult('upcoming1')">
+                <!-- Upcoming Lottery 3 -->
+                <div class="lottery-card upcoming-card-3 cursor-pointer" onclick="toggleResult('upcoming3')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
                             <div class="flex items-center space-x-3">
-                                <span class="upcoming-badge rounded-full">NEXT</span>
-                                <span class="card-text-secondary card-date">29 June 2025</span>
+                                <span class="upcoming-badge rounded-full">UPCOMING</span>
+                                <span class="card-text-secondary card-date">01 July 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Saturday Choice Weekly Lottery<br>( CL 17 th Draw )</h3>
+                            <h3 class="card-text card-lottery-name">Saturday Choice Weekly Lottery (CL 19th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
-                                <span class="card-prize">1st Prize: ₹75 Lakh</span>
+                                <span class="card-prize">1st Prize: ₹60 Lakh</span>
                             </div>
 
                             <!-- Countdown Timer -->
@@ -1032,52 +1079,77 @@
                                 <div class="flex items-center justify-between">
                                     <span class="countdown-label">Draws in:</span>
                                     <div class="flex space-x-2 items-center">
-                                        <div class="countdown-badge" id="countdown1-hours">23</div>
-                                        <span class="card-text font-bold">:</span>
-                                        <div class="countdown-badge" id="countdown1-minutes">45</div>
-                                        <span class="card-text font-bold">:</span>
-                                        <div class="countdown-badge" id="countdown1-seconds">30</div>
+                                        <div class="countdown-badge" id="countdown3-days">2</div>
+                                        <span class="card-text font-bold">d</span>
+                                        <div class="countdown-badge" id="countdown3-hours">23</div>
+                                        <span class="card-text font-bold">h</span>
+                                        <div class="countdown-badge" id="countdown3-minutes">45</div>
+                                        <span class="card-text font-bold">m</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-right ml-4">
-                            <i id="arrow-upcoming1"
+                            <i id="arrow-upcoming3"
                                 class="fas fa-chevron-down card-text text-xl transition-transform duration-300"></i>
                         </div>
                     </div>
 
-                    <div id="upcoming1" class="card-expand collapsed mt-6">
-                        <div class="result-container space-y-3">
-                            <div class="text-center mb-4">
-                                <h4 class="font-bold text-lg text-gray-700 mb-2">Prize Structure</h4>
-                                <p class="text-sm text-gray-600">Draw starts in few hours!</p>
+                    <div id="upcoming3" class="card-expand collapsed mt-6">
+                        <div class="result-container space-y-4">
+                            <!-- 1st Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹60,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
+                                </div>
                             </div>
-                            <div class="grid grid-cols-1 gap-3 text-sm">
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">1st Prize:</span>
-                                    <span class="font-bold text-green-600">₹75,00,000</span>
+
+                            <!-- 2nd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹6,00,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">2nd Prize:</span>
-                                    <span class="font-bold text-green-600">₹7,50,000</span>
+                            </div>
+
+                            <!-- 3rd Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹60,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">3rd Prize:</span>
-                                    <span class="font-bold text-green-600">₹75,000</span>
+                            </div>
+
+                            <!-- 4th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹3,000/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">4th Prize:</span>
-                                    <span class="font-bold text-green-600">₹3,750</span>
-                                </div>
-                                <div class="prize-row flex justify-between p-3 rounded">
-                                    <span class="font-medium text-gray-600">5th Prize:</span>
-                                    <span class="font-bold text-green-600">₹750</span>
+                            </div>
+
+                            <!-- 5th Prize -->
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹600/-</div>
+                                    <div class="result-winning-number">_ _ _ _ _ _</div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -1102,10 +1174,10 @@
                                 <span class="past-badge rounded-full">PAST</span>
                                 <span class="card-text-secondary card-date">27 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Goa State Weekly</h3>
+                            <h3 class="card-text card-lottery-name">Choice Weekly Lottery<br>(CL 14th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
-                                <span class="card-prize">Winner: GS 123456 - ₹40 Lakh</span>
+                                <span class="card-prize">Winner: MH 40352 - ₹40 Lakh</span>
                             </div>
                         </div>
                         <div class="text-right ml-4">
@@ -1117,72 +1189,52 @@
                     <div id="past1" class="card-expand collapsed mt-6">
                         <div class="result-container space-y-4">
                             <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-bold text-gray-700 text-lg">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-xl"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-xl">₹40,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number font-mono">GS 123456</div>
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,00,000/-</div>
+                                    <div class="result-winning-number">MH 40352</div>
+
                                 </div>
                             </div>
 
                             <!-- 2nd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹4,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">OR 987654</div>
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">2712</div>
+
                                 </div>
                             </div>
 
                             <!-- 3rd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹40,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">KA 345678</div>
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹5,000/-</div>
+                                    <div class="result-winning-number">901</div>
+
                                 </div>
                             </div>
 
                             <!-- 4th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹2,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">AP 876543</div>
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,000/-</div>
+                                    <div class="result-winning-number">032</div>
+
                                 </div>
                             </div>
 
                             <!-- 5th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹400</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">TS 654321</div>
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹100/-</div>
+                                    <div class="result-winning-number">001</div>
+
                                 </div>
                             </div>
                         </div>
@@ -1197,10 +1249,10 @@
                                 <span class="past-badge rounded-full">PAST</span>
                                 <span class="card-text-secondary card-date">26 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Assam Daily</h3>
+                            <h3 class="card-text card-lottery-name">Choice Weekly Lottery<br>(CL 13th Draw)</h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
-                                <span class="card-prize">Winner: AS 789012 - ₹15 Lakh</span>
+                                <span class="card-prize">Winner: MH 40352 - ₹15 Lakh</span>
                             </div>
                         </div>
                         <div class="text-right ml-4">
@@ -1212,72 +1264,52 @@
                     <div id="past2" class="card-expand collapsed mt-6">
                         <div class="result-container space-y-4">
                             <!-- 1st Prize -->
-                            <div class="prize-section">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-bold text-gray-700 text-lg">
-                                        <i class="fas fa-medal text-yellow-500 mr-2 text-xl"></i>
-                                        1st Prize
-                                    </span>
-                                    <span class="font-bold text-green-600 text-xl">₹15,00,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number font-mono">AS 789012</div>
+                            <div class="result-card">
+                                <div class="result-card-header">1st Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,00,000/-</div>
+                                    <div class="result-winning-number">MH 40352</div>
+
                                 </div>
                             </div>
 
                             <!-- 2nd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
-                                        2nd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹1,50,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">NE 246810</div>
+                            <div class="result-card">
+                                <div class="result-card-header">2nd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹10,000/-</div>
+                                    <div class="result-winning-number">2712</div>
+
                                 </div>
                             </div>
 
                             <!-- 3rd Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-amber-600 mr-2"></i>
-                                        3rd Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹15,000</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">ML 135790</div>
+                            <div class="result-card">
+                                <div class="result-card-header">3rd Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹5,000/-</div>
+                                    <div class="result-winning-number">901</div>
+
                                 </div>
                             </div>
 
                             <!-- 4th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-500 mr-2"></i>
-                                        4th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹750</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">SK 864209</div>
+                            <div class="result-card">
+                                <div class="result-card-header">4th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹1,000/-</div>
+                                    <div class="result-winning-number">032</div>
+
                                 </div>
                             </div>
 
                             <!-- 5th Prize -->
-                            <div class="prize-section-mobile">
-                                <div class="prize-header-mobile">
-                                    <span class="flex items-center font-medium text-gray-600">
-                                        <i class="fas fa-medal text-slate-400 mr-2"></i>
-                                        5th Prize
-                                    </span>
-                                    <span class="font-bold text-green-600">₹150</span>
-                                </div>
-                                <div class="prize-number-mobile">
-                                    <div class="winning-number-small font-mono">TR 753951</div>
+                            <div class="result-card">
+                                <div class="result-card-header">5th Prize</div>
+                                <div class="result-card-content">
+                                    <div class="result-prize-amount">₹100/-</div>
+                                    <div class="result-winning-number">001</div>
+
                                 </div>
                             </div>
                         </div>
