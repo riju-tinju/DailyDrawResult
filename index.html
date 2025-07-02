@@ -180,43 +180,47 @@
 
         .past-card1::before {
             background: #D97706;
-        } 
+        }
 
-         .past-card2 {
-             background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+        .past-card2 {
+            background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
         }
 
         .past-card2::before {
-             background: #059669;
-        } 
-         .past-card3 {
+            background: #059669;
+        }
+
+        .past-card3 {
             background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
         }
 
         .past-card3::before {
-             background: #4F46E5;
-        } 
+            background: #4F46E5;
+        }
 
-         .past-card4 {
-             background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+        .past-card4 {
+            background: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
         }
 
         .past-card4::before {
-              background: #DB2777;
-        } 
-        .past-card5 {
-             background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
+            background: #DB2777;
         }
-        .past-card5::before {
-             background: #9333EA;
-        } 
 
-         .past-card6 {
-              background: linear-gradient(135deg, #FFC93C 0%, #FFD666 100%);
+        .past-card5 {
+            background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
         }
+
+        .past-card5::before {
+            background: #9333EA;
+        }
+
+        .past-card6 {
+            background: linear-gradient(135deg, #FFC93C 0%, #FFD666 100%);
+        }
+
         .past-card6::before {
-             background: #FFB020;
-        } 
+            background: #FFB020;
+        }
 
         .countdown-badge {
             background: linear-gradient(45deg, #667eea, #764ba2);
@@ -466,6 +470,9 @@
             /* font-family: 'Courier New', monospace; */
             font-family: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace";
             letter-spacing: 2px;
+            border: 3px solid rgb(128, 123, 123);
+            border-radius: 6px;
+           background-color: #adaec363;
             /* margin-bottom: 12px; */
         }
 
@@ -513,9 +520,7 @@
 
             .result-winning-number {
                 font-size: 1.6rem;
-                border: 1px solid rgb(128, 123, 123);
-                border-radius: 6px;
-                background-color: #fafffe63;
+
             }
         }
     </style>
@@ -536,7 +541,7 @@
     </header>
 
     <main class="px-4 py-6 space-y-8 max-w-md mx-auto">
-        
+
 
         <!-- Upcoming Lotteries -->
         <section>
@@ -643,7 +648,7 @@
 
             </div>
         </section>
-   
+
         <!-- Today's Results -->
         <section>
             <div class="flex items-center justify-between mb-6">
@@ -912,8 +917,8 @@
                         </div>
                     </div>
                 </div>
-                
-                 <!-- Past Result 2 -->
+
+                <!-- Past Result 2 -->
                 <div class="lottery-card past-card3 cursor-pointer" onclick="toggleResult('past3')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -921,7 +926,8 @@
                                 <span class="past-badge rounded-full">RESULT</span>
                                 <span class="card-text-secondary card-date">28 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Saturday Choice Weekly Lottery<br>(SAC 18th Draw)</h3>
+                            <h3 class="card-text card-lottery-name">Saturday Choice Weekly Lottery<br>(SAC 18th Draw)
+                            </h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">Winner: MH 40352 - ₹15 Lakh</span>
@@ -988,7 +994,7 @@
                     </div>
                 </div>
 
-                 <!-- Past Result 2 -->
+                <!-- Past Result 2 -->
                 <div class="lottery-card past-card4 cursor-pointer" onclick="toggleResult('past4')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -1063,7 +1069,7 @@
                     </div>
                 </div>
 
-                 <!-- Past Result 2 -->
+                <!-- Past Result 2 -->
                 <div class="lottery-card past-card5 cursor-pointer" onclick="toggleResult('past5')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -1071,7 +1077,8 @@
                                 <span class="past-badge rounded-full">RESULT</span>
                                 <span class="card-text-secondary card-date">26 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Thursday Choice Weekly Lottery<br>(THC 18th Draw)</h3>
+                            <h3 class="card-text card-lottery-name">Thursday Choice Weekly Lottery<br>(THC 18th Draw)
+                            </h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">Winner: MH 40352 - ₹15 Lakh</span>
@@ -1136,7 +1143,7 @@
                     </div>
                 </div>
 
-                 <!-- Past Result 2 -->
+                <!-- Past Result 2 -->
                 <div class="lottery-card past-card6 cursor-pointer" onclick="toggleResult('past6')">
                     <div class="flex items-center justify-between">
                         <div class="flex-1 card-element-spacing">
@@ -1144,7 +1151,8 @@
                                 <span class="past-badge rounded-full">RESULT</span>
                                 <span class="card-text-secondary card-date">25 June 2025</span>
                             </div>
-                            <h3 class="card-text card-lottery-name">Wednesday Choice Weekly Lottery<br>(WEC 18th Draw)</h3>
+                            <h3 class="card-text card-lottery-name">Wednesday Choice Weekly Lottery<br>(WEC 18th Draw)
+                            </h3>
                             <div class="flex items-center card-text-secondary">
                                 <i class="fas fa-trophy text-yellow-300 mr-2"></i>
                                 <span class="card-prize">Winner: MH 40352 - ₹15 Lakh</span>
